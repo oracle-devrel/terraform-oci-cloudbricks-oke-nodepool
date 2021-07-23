@@ -41,7 +41,7 @@ variable "ssh_private_is_path" {
 }
 
 variable "ssh_public_key" {
-  description = "Defines SSH Public Key to be used in order to remotely connect to compute instance"
+  description = "Defines SSH Public Key to be used in order to remotely connect to compute nodepool"
   type        = string
 
 }
@@ -119,10 +119,25 @@ variable "k8s_label_map" {
 
 variable "node_metadata" {
   type        = map(any)
-  description = "A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch."
+  description = "A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure nodepool in the node pool on launch."
   default     = {}
 }
 
+variable "is_flex_shape" {
+  description = "Boolean that describes if the shape is flex or not"
+  default     = false
+  type        = bool
+}
+
+variable "nodepool_shape_config_memory_in_gbs" {
+  description = "(Updatable) The total amount of memory available to the nodepool, in gigabytes."
+  default     = ""
+}
+
+variable "nodepool_shape_config_ocpus" {
+  description = "(Updatable) The total number of OCPUs available to the nodepool."
+  default     = ""
+}
 /********** OKE NodePool Variables **********/
 
 /********** Brick Variables **********/
