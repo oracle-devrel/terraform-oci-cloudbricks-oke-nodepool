@@ -8,6 +8,8 @@ The following cloud brick enables you to create a decoupled Oracle Kubernetes En
 ## Reference Architecure
 The following is the reference architecture associated to this brick.
 
+![Reference Architecture](./images/Bricks_Architectures-oke_nodepool_ref_arch.png)
+
 In this case you can take advantage of the decoupled nature of this module and provision as many nodepools as required. You later on can use node affinity to have different types of workload based nodepools (such as GPU enabled ones)
 
 ### Prerequisites

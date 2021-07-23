@@ -27,6 +27,7 @@ variable "private_key_path" {
 }
 /********** Provider Variables NOT OVERLOADABLE **********/
 
+/********** Brick Variables **********/
 
 /********** SSH Key Variables **********/
 variable "ssh_public_is_path" {
@@ -124,3 +125,4 @@ variable "node_metadata" {
 
 /********** OKE NodePool Variables **********/
 
+/********** Brick Variables **********/
