@@ -35,12 +35,20 @@ resource "oci_containerengine_node_pool" "oke_node_pool" {
     create = "30m"
     delete = "30m"
   }
-  
+
   dynamic "initial_node_labels" {
     for_each = var.k8s_label_map
     content {
       key   = initial_node_labels.key
       value = initial_node_labels.value
+    }
+  }
+
+  dynamic "node_shape_config" {
+    for_each = var.is_flex_shape ? [1] : []
+    content {
+      memory_in_gbs = var.nodepool_shape_config_memory_in_gbs
+      ocpus         = var.nodepool_shape_config_ocpus
     }
   }
 }
