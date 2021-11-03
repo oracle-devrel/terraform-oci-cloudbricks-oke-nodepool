@@ -51,7 +51,7 @@ data "oci_core_images" "OL79" {
   compartment_id           = var.tenancy_ocid
   operating_system         = "Oracle Linux"
   operating_system_version = "7.9"
-  shape                    = var.node_pool_shape
+  #shape                    = var.node_pool_shape
   filter {
     name   = "display_name"
     #values = ["^([a-zA-z]+)-([a-zA-z]+)-([\\.0-9]+)-([\\.0-9-]+)$"]
