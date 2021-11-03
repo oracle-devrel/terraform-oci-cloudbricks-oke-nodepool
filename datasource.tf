@@ -54,7 +54,8 @@ data "oci_core_images" "OL79" {
   shape                    = var.node_pool_shape
   filter {
     name   = "display_name"
-    values = ["^([a-zA-z]+)-([a-zA-z]+)-([\\.0-9]+)-([\\.0-9-]+)$"]
+    #values = ["^([a-zA-z]+)-([a-zA-z]+)-([\\.0-9]+)-([\\.0-9-]+)$"]
+    values = ["^.*Oracle[^G]*$"]
     regex  = true
   }
 }
